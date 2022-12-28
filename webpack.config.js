@@ -1,4 +1,6 @@
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
+const webpack = require('webpack');
 
 module.exports = {
     mode: 'development',
@@ -7,6 +9,14 @@ module.exports = {
         filename: 'main.js',
         path: path.resolve(__dirname, 'dist'),
     },
+    plugins: [
+        new HtmlWebpackPlugin({
+          template: 'public/index.html',
+        }),
+        new webpack.ProvidePlugin({
+            'React':     'react'
+          })
+      ],
     module:{
         rules:[
             {
@@ -14,7 +24,10 @@ module.exports = {
                 test: /\.(js|jsx)$/,
                 exclude: /node_modules/,
                 options: { 
-                    presets: ['@babel/env','@babel/preset-react'] 
+                    presets: [
+                        '@babel/env',
+                        ['@babel/preset-react', {'runtime': 'automatic'}]
+                    ] 
                 },
             }
         ]
