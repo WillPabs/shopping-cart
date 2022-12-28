@@ -16,7 +16,47 @@
   \********************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-eval("__webpack_require__.r(__webpack_exports__);\nfunction App() {\n  return /*#__PURE__*/React.createElement(\"div\", {\n    className: \"App\"\n  }, /*#__PURE__*/React.createElement(\"h1\", null, \"Shopping Cart\"));\n}\n/* harmony default export */ __webpack_exports__[\"default\"] = (App);\n\n//# sourceURL=webpack://shopping-cart/./src/App.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _components_Homepage__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/Homepage */ \"./src/components/Homepage.js\");\n\nfunction App() {\n  return /*#__PURE__*/React.createElement(\"div\", {\n    className: \"App\"\n  }, /*#__PURE__*/React.createElement(_components_Homepage__WEBPACK_IMPORTED_MODULE_0__[\"default\"], null));\n}\n/* harmony default export */ __webpack_exports__[\"default\"] = (App);\n\n//# sourceURL=webpack://shopping-cart/./src/App.js?");
+
+/***/ }),
+
+/***/ "./src/components/Card.js":
+/*!********************************!*\
+  !*** ./src/components/Card.js ***!
+  \********************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+eval("__webpack_require__.r(__webpack_exports__);\nvar Card = function Card(_ref) {\n  var image = _ref.image,\n    name = _ref.name,\n    description = _ref.description,\n    onClick = _ref.onClick,\n    addToCart = _ref.addToCart;\n  return /*#__PURE__*/React.createElement(\"form\", null, /*#__PURE__*/React.createElement(\"div\", null, /*#__PURE__*/React.createElement(\"figure\", {\n    onClick: onClick\n  }, /*#__PURE__*/React.createElement(\"img\", {\n    src: image,\n    alt: \"productImage\"\n  }), /*#__PURE__*/React.createElement(\"figcaption\", null, name)), /*#__PURE__*/React.createElement(\"input\", {\n    type: \"number\",\n    id: \"quantity\",\n    name: \"quantity\"\n  }), /*#__PURE__*/React.createElement(\"button\", {\n    type: \"submit\"\n  }, \"Add To Cart\")));\n};\n/* harmony default export */ __webpack_exports__[\"default\"] = (Card);\n\n//# sourceURL=webpack://shopping-cart/./src/components/Card.js?");
+
+/***/ }),
+
+/***/ "./src/components/Header.js":
+/*!**********************************!*\
+  !*** ./src/components/Header.js ***!
+  \**********************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+eval("__webpack_require__.r(__webpack_exports__);\nvar Header = function Header(_ref) {\n  var message = _ref.message;\n  var logo = '#';\n  var companyName = 'ShoppingCart';\n  return /*#__PURE__*/React.createElement(\"div\", null, /*#__PURE__*/React.createElement(\"div\", {\n    id: \"logo-container\"\n  }, /*#__PURE__*/React.createElement(\"img\", {\n    src: logo,\n    alt: \"logoImage\"\n  }), /*#__PURE__*/React.createElement(\"h3\", null, companyName)), /*#__PURE__*/React.createElement(\"div\", {\n    id: \"links-container\"\n  }));\n};\n/* harmony default export */ __webpack_exports__[\"default\"] = (Header);\n\n//# sourceURL=webpack://shopping-cart/./src/components/Header.js?");
+
+/***/ }),
+
+/***/ "./src/components/Homepage.js":
+/*!************************************!*\
+  !*** ./src/components/Homepage.js ***!
+  \************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _Header__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Header */ \"./src/components/Header.js\");\n/* harmony import */ var _Shop__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Shop */ \"./src/components/Shop.js\");\n\n\nvar Homepage = function Homepage() {\n  return /*#__PURE__*/React.createElement(\"div\", {\n    id: \"homepage\"\n  }, /*#__PURE__*/React.createElement(_Header__WEBPACK_IMPORTED_MODULE_0__[\"default\"], null), /*#__PURE__*/React.createElement(_Shop__WEBPACK_IMPORTED_MODULE_1__[\"default\"], null));\n};\n/* harmony default export */ __webpack_exports__[\"default\"] = (Homepage);\n\n//# sourceURL=webpack://shopping-cart/./src/components/Homepage.js?");
+
+/***/ }),
+
+/***/ "./src/components/Shop.js":
+/*!********************************!*\
+  !*** ./src/components/Shop.js ***!
+  \********************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _Card__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Card */ \"./src/components/Card.js\");\n\nvar Shop = function Shop(_ref) {\n  var products = _ref.products;\n  return /*#__PURE__*/React.createElement(\"div\", null, /*#__PURE__*/React.createElement(_Card__WEBPACK_IMPORTED_MODULE_0__[\"default\"], {\n    image: \"imageLink\",\n    name: \"Some Product\"\n  }));\n};\n/* harmony default export */ __webpack_exports__[\"default\"] = (Shop);\n\n//# sourceURL=webpack://shopping-cart/./src/components/Shop.js?");
 
 /***/ }),
 
@@ -26,7 +66,7 @@ eval("__webpack_require__.r(__webpack_exports__);\nfunction App() {\n  return /*
   \**********************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var react_dom_client__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom/client */ \"./node_modules/react-dom/client.js\");\n/* harmony import */ var _App__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./App */ \"./src/App.js\");\n\n\n\nvar root = react_dom_client__WEBPACK_IMPORTED_MODULE_1__.createRoot(document.getElementById('root'));\nroot.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().StrictMode), null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_App__WEBPACK_IMPORTED_MODULE_2__[\"default\"], null)));\n\n//# sourceURL=webpack://shopping-cart/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var react_dom_client__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom/client */ \"./node_modules/react-dom/client.js\");\n/* harmony import */ var _App__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./App */ \"./src/App.js\");\n\n\n\nreact_dom_client__WEBPACK_IMPORTED_MODULE_1__.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_App__WEBPACK_IMPORTED_MODULE_2__[\"default\"], null), document.getElementById('root'));\n\n//# sourceURL=webpack://shopping-cart/./src/index.js?");
 
 /***/ }),
 
