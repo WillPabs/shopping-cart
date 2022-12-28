@@ -102,6 +102,7 @@ This application allows a user to surf through a list of various products. The u
 #### Product
 - id
 - name
+- category
 - description
 - image
 - price
