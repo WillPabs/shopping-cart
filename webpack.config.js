@@ -23,6 +23,10 @@ module.exports = {
     module:{
         rules:[
             {
+                test: /\.(avif|png|svg|jpg|jpeg|gif)$/i,
+                type: 'asset/resource',
+            },
+            {
                 loader: 'babel-loader',
                 test: /\.(js|jsx)$/,
                 exclude: /node_modules/,
