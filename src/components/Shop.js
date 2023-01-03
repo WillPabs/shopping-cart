@@ -19,6 +19,15 @@ const Shop = ({ productList }) => {
             
             <ul id="product-list">
                 {productCards}
+                {/* {productsList.map(product => {
+                    return (
+                        <div style={{width:80}}>
+                            <h3>{product.title}</h3>
+                            <img style={{}} src={product.image} alt={product.title} />
+                            <p>{product.price}</p>
+                        </div>
+                    )
+                })} */}
             </ul>
         </div>
     )   
