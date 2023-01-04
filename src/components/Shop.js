@@ -14,6 +14,8 @@ const Shop = ({ productList }) => {
 
 
     return (
+        // if productlist is empty then we display the list of categories to choose from
+        // otherwise we display the productslist
         <div>
             <h2>Browse {products[0].category} Products</h2>
             
