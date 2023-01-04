@@ -12,7 +12,6 @@ const Categories = () => {
         .then(res => res.json())
         .then(json => {
             setProductsList(json);
-            console.log(json);
         });
     }, [])
 
@@ -27,11 +26,10 @@ const Categories = () => {
                 else if (product === "jewelery") link = jewelry;
 
                 return (
-                    <li>
-                        <Link to={`/shop/${product}`} key={product} style={{width:80}}>
+                    <li key={product}>
+                        <Link to={`/shop/${product}`} style={{width:80}}>
                             <img style={{width:80}} src={link} alt={product} />
                             <h3>{product}</h3>
-                            {/* <p>{product.price}</p> */}
                         </Link>
                     </li>
                 )
