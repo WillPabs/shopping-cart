@@ -10,6 +10,11 @@ const RouteSwitch = () => {
         <BrowserRouter>
             <Routes>
                 <Route path='/' element={<App/>}></Route>
+                <Route 
+                    path='/shop/:productType' 
+                    element={<Shop/>}
+                >
+                </Route>
                 <Route path='/shop' element={<Shop/>}></Route>
                 <Route path='/header' element={<Header/>}></Route>
             </Routes>
