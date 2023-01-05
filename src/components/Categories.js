@@ -19,7 +19,6 @@ const Categories = () => {
         <ul className='categories'>
             {productsList.map(product => {
                 let link;
-                console.log(electronics);
                 if (product === 'electronics') link = electronics
                 else if (product === "men's clothing") link = tshirt
                 else if (product === "women's clothing") link = dress
