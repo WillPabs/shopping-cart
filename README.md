@@ -120,3 +120,11 @@ This application allows a user to surf through a list of various products. The u
 - get product by type
 - get all products
 - get product by id
+
+## Functionality
+
+### Cart
+- a user is able to add an item to their cart when on the shop page
+- when the user clicks add to cart the requested quantity will be deducted from the quantity available for the item
+- the item is added to the cart
+- the cart component will be shown upon click of 'add to cart' on the right side with the items in cart
