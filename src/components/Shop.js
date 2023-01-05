@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Card from "./Card";
+import Categories from "./Categories";
 
 const Shop = () => {
     const { productType } = useParams();
@@ -22,25 +23,14 @@ const Shop = () => {
                 <Card name={product.title} price={product.price} image={product.image}/>
             </li>
         )
-    }) : <div>No Products</div>;
+    }) : <Categories/>;
 
     return (
-        // if productlist is empty then we display the list of categories to choose from
-        // otherwise we display the productslist
         <div>
             <h2>Browse {productType} Products</h2>
             <ul id="product-list">
                 {console.log(products)}
                 {productCards}
-                {/* {productsList.map(product => {
-                    return (
-                        <div style={{width:80}}>
-                            <h3>{product.title}</h3>
-                            <img style={{}} src={product.image} alt={product.title} />
-                            <p>{product.price}</p>
-                        </div>
-                    )
-                })} */}
             </ul>
         </div>
     )   
