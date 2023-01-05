@@ -1,4 +1,6 @@
-const Header = ({ message }) => {
+import { Link } from "react-router-dom";
+
+const Header = () => {
     const logo = '#';
     const companyName = 'ShoppingCart';
     // button will toggle showing the cart component
@@ -8,25 +10,26 @@ const Header = ({ message }) => {
 
     const loginButton = <button type="button">Login</button>
 
-    const links = ['Home', 'Shop', 'About', 'Contact'];
-    const linksComponent = links.map(link => {
-        return (
-            <li key={link}>
-                <a href={link}>{link}</a>
-            </li>
-        )
-    });
-
-
     return (
         <div>
             <div id="logo-container">
                 <img src={logo} alt="logoImage" />
                 <h3>{companyName}</h3>
             </div>
-            <div id="links-container">
-                {linksComponent}
-            </div>
+            <ul id="links-container">             
+                <li className="nav-link">
+                    <Link to='/'>Home</Link>
+                </li>
+                <li className="nav-link">
+                    <Link to='/shop'>Shop</Link>
+                </li>
+                <li className="nav-link">
+                    <Link to='/about'>About</Link>
+                </li>
+                <li className="nav-link">
+                    <Link to='/contact'>Contact</Link>
+                </li>
+            </ul>
             <div id="cart-btn-container">
                 {cartButton}
             </div>
