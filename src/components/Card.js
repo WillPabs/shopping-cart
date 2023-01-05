@@ -1,5 +1,12 @@
+import { useState } from "react";
+
 const Card = ({ image, name, price, description, onClick, addToCart }) => {
-    
+    const [quantity, setQuantity] = useState(0);
+
+    const handleChange = (e) => {
+        setQuantity(e.target.value);
+    }
+
     return (
         <form>
             <div>
@@ -13,7 +20,8 @@ const Card = ({ image, name, price, description, onClick, addToCart }) => {
                         type="number"
                         id="quantity"
                         name="quantity"
-                        value="1"
+                        value={quantity}
+                        onChange={handleChange}
                     />
                     <button type="submit">Add To Cart</button>
                 </figure>
