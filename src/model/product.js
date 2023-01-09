@@ -1,20 +1,26 @@
-const Product = (name, description, image, price, availableQuantity) => {
-    let obj = Object.create(productFunctions);
-    obj.id = crypto.randomUUID;
-    obj.name = name;
-    obj.description = description;
-    obj.image = image;
-    obj.price = price;
-    obj.availableQuantity = availableQuantity;
-    return obj;
-}
+import mongoose from "mongoose";
 
-const productFunctions = {
-    deductQuantity(amount) {
-        if (this.availableQuantity - amount >= 0) {
-            this.availableQuantity -= amount;
-        }
-    }
-};
+const productSchema = new mongoose.Schema({
+    name : {
+        required: true,
+        type: String
+    }, 
+    description : {
+        required: true,
+        type: String
+    }, 
+    imageUrl : {
+        required: true,
+        type: String
+    },  
+    price : {
+        required: true,
+        type: Number
+    },  
+    availableQuantity : {
+        required: true,
+        type: Number
+    }, 
+});
 
-export default Product;
+export default mongoose.Model('Product', productSchema);

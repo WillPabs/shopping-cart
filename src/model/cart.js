@@ -1,9 +1,13 @@
-const Cart = () => {
-    let obj = Object.create(cartFunctions);
-    obj.id = crypto.randomUUID;
-    obj.products = [];
-    return obj;
-};
+import mongoose from "mongoose";
+import product from "./product";
+
+const cartSchema = new mongoose.Schema({
+    products : [product]
+    // let obj = Object.create(cartFunctions);
+    // obj.id = crypto.randomUUID;
+    // obj.products = [];
+    // return obj;
+});
 
 const cartFunctions = {
     calculateTotal() {
@@ -27,4 +31,4 @@ const cartFunctions = {
     }
 };
 
-export default Cart;
+export default mongoose.Model('Cart', cartSchema);
