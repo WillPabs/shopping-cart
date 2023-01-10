@@ -1,14 +1,20 @@
-import express from "express";
-import db from "../db/conn";
+const express = require("express");
+const { connectToServer, getDb } = require("../db/conn");
+const { default: product } = require("../model/product");
 
 const cartRoutes = express.Router();
 
 // const cartApi = () => {
     
     // create cart
-    cartRoutes.get('/cart', (req, res) => {
-        const dbConnect = db.getDb();
-        dbConnect.collection('sales').find({}).limit(20)
+    cartRoutes.get('/cart', async (req, res, next) => {
+        // product.find({}).then((p) => {
+        //     res.send(p);
+        // }).catch(next);
+        connectToServer();
+        const dbConnect = getDb();
+        console.log(dbConnect);
+        dbConnect.sales.find({}).limit(20)
         .toArray((err, result) => {
             if (err) {
                 res.status(400).send('Error fetching sales!');
@@ -24,3 +30,5 @@ const cartRoutes = express.Router();
 
     // checkout
 // }
+
+module.exports = cartRoutes;
