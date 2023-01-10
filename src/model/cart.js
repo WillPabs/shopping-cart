@@ -1,5 +1,5 @@
-import mongoose from "mongoose";
-import product from "./product";
+const mongoose = require("mongoose");
+const product = require("./product");
 
 const cartSchema = new mongoose.Schema({
     products : [product]
