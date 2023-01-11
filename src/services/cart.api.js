@@ -1,5 +1,5 @@
 const express = require("express");
-const { connectToServer, getDb } = require("../db/conn");
+const db = require("../db/conn");
 const { default: product } = require("../model/product");
 
 const cartRoutes = express.Router();
@@ -11,12 +11,13 @@ const cartRoutes = express.Router();
         // product.find({}).then((p) => {
         //     res.send(p);
         // }).catch(next);
-        connectToServer();
-        const dbConnect = getDb();
-        console.log(dbConnect);
-        dbConnect.sales.find({}).limit(20)
+        await db.connectToServer();
+        const dbConnect = await db.getDb();
+        console.log(await dbConnect.collection('sales'));
+        await dbConnect.collection('sales').find()
         .toArray((err, result) => {
             if (err) {
+                console.log(err);
                 res.status(400).send('Error fetching sales!');
             } else {
                 res.json(result);
