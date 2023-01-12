@@ -13,17 +13,10 @@ let dbConnection;
 module.exports = {
   connectToServer: async () => {
     try {
-      await client.connect();
-      // console.log('DbConnect',dbConnection);
-      await client.db('cluster0').command({ ping: 1});
+      client.on('commandStarted', started => console.log(started));
+      
       dbConnection = client.db('cluster0');
 
-      const doc = {
-        title: "Record of a Shriveled Datum",
-        content: "No bytes, no problem. Just insert a document, in MongoDB",
-      }
-
-      dbConnection.collection('sales').insertOne(doc);
       console.log("Successfully connected to MongoDB.");
     } catch (err) {
       console.log(err);
