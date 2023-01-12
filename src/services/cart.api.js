@@ -8,26 +8,54 @@ const cartRoutes = express.Router();
     
     // create cart
     cartRoutes.get('/cart', async (req, res, next) => {
-        // product.find({}).then((p) => {
-        //     res.send(p);
-        // }).catch(next);
-        await db.connectToServer();
-        const dbConnect = await db.getDb();
-        console.log(await dbConnect.collection('sales'));
-        await dbConnect.collection('sales').find()
-        .toArray((err, result) => {
-            if (err) {
-                console.log(err);
-                res.status(400).send('Error fetching sales!');
-            } else {
-                res.json(result);
-            }
-        });
+        try {
+            await db.connectToServer();
+            const dbConnect = await db.getDb();
+    
+            const cart = await dbConnect.collection('cart').find({}).toArray();
+            res.json(cart);
+        } catch (error) {
+            console.log(error);
+            res.json(error);
+        }
     });
 
     // add to cart
+    cartRoutes.post('/cart', async (req, res) => {
+        try {
+            await db.connectToServer();
+            const dbConnect = await db.getDb();
+    
+            const item = req.body;
+    
+            const insertRes = await dbConnect.collection('cart').insertOne(item);
+            console.log(item);
+            res.json(insertRes);
+        } catch (error) {
+            console.log(error);
+            res.json(error);
+        }
+    })
 
     // delete from cart
+    cartRoutes.patch('/cart', async (req, res) => {
+        try {
+            await db.connectToServer();
+            const dbConnect = await db.getDb();
+
+            const item = req.body;
+
+            const cart = await dbConnect.collection('cart');
+
+            const deleteRes = await cart.deleteOne(item);
+            
+            console.log(deleteRes);
+            res.json(deleteRes);
+        } catch (error) {
+            console.log(error);
+            res.json(error);
+        }
+    })
 
     // checkout
 // }
