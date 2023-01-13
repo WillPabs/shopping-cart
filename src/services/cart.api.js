@@ -1,6 +1,5 @@
 const express = require("express");
 const db = require("../db/conn");
-const { default: product } = require("../model/product");
 
 const cartRoutes = express.Router();
 
@@ -51,6 +50,24 @@ const cartRoutes = express.Router();
             
             console.log(deleteRes);
             res.json(deleteRes);
+        } catch (error) {
+            console.log(error);
+            res.json(error);
+        }
+    });
+
+    // clear cart
+    cartRoutes.delete('/cart', async (req, res) => {
+        try {
+            await db.connectToServer();
+            const dbConnect = await db.getDb();
+
+            const cart = await dbConnect.collection('cart');
+
+            const deletedRes = await cart.drop();
+            console.log(deletedRes);
+            res.json(deletedRes);
+
         } catch (error) {
             console.log(error);
             res.json(error);
