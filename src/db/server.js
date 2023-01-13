@@ -2,6 +2,7 @@ require('dotenv').config();
 
 const createError = require('http-errors')
 const express = require('express');
+const cors = require('cors');
 const mongoose = require('mongoose');
 
 const cartRouter = require('../services/cart.api');
@@ -25,6 +26,7 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 
 app.use(express.json());
+app.use(cors());
 app.use(express.urlencoded({ extended: false }));
 
 app.use('/', cartRouter);
