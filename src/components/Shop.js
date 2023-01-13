@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Card from "./Card";
+import Cart from "./Cart";
 import Categories from "./Categories";
 import Header from "./Header";
 
@@ -15,7 +16,7 @@ const Shop = () => {
                     setProductCards(products.length > 0 ? products.map(product => {
                         return (
                             <li key={product.id}>
-                                <Card name={product.title} price={product.price} image={product.image}/>
+                                <Card product={product}/>
                             </li>
                         )
                     }) : <Categories/>);
@@ -26,6 +27,7 @@ const Shop = () => {
     return (
         <div>
             <Header/>
+            <Cart/>
             <h2>Browse {productType ? productType : 'All'} Products</h2>
             <ul id="product-list">
                 {productCards}
