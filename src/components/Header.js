@@ -8,10 +8,10 @@ const Header = () => {
         <img src="#" alt="Cart" />
     </button>
 
-    const loginButton = <button type="button">Login</button>
+    const loginButton = <button className="bg-sky-500" type="button">Login</button>
 
     return (
-        <div>
+        <div className="flex flex-row">
             <div id="logo-container">
                 <img src={logo} alt="logoImage" />
                 <h3>{companyName}</h3>
