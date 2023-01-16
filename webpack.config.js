@@ -37,6 +37,13 @@ module.exports = {
                         ['@babel/preset-react', {'runtime': 'automatic'}]
                     ] 
                 },
+            },
+            {
+                test: /\.css$/,
+                use: [
+                  'style-loader',
+                  'css-loader'
+                ]
             }
         ]
     },
