@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import Card from "./Card";
 import Cart from "./Cart";
 import Categories from "./Categories";
-import Header from "./Navbar";
+import Header from "./Nav";
 
 const Shop = () => {
     const { productType } = useParams();
