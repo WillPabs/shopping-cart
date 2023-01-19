@@ -1,10 +1,10 @@
-import Header from './Header';
+import Navbar from './Navbar';
 import Categories from './Categories';
 
 const Homepage = () => {
     return (
         <div id="homepage">
-            <Header/>
+            <Navbar/>
             <Categories/>
         </div>
     )
