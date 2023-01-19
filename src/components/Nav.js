@@ -35,9 +35,9 @@ const Nav = () => {
             color="blue-gray"
             className="p-1 font-normal"
           >
-            <a href="#" className="flex items-center">
-              Pages
-            </a>
+            <Link to="/" className="flex items-center">
+              Home
+            </Link>
           </Typography>
           <Typography
             as="li"
@@ -45,9 +45,9 @@ const Nav = () => {
             color="blue-gray"
             className="p-1 font-normal"
           >
-            <a href="#" className="flex items-center">
-              Account
-            </a>
+            <Link to="/about" className="flex items-center">
+              About
+            </Link>
           </Typography>
           <Typography
             as="li"
@@ -55,9 +55,9 @@ const Nav = () => {
             color="blue-gray"
             className="p-1 font-normal"
           >
-            <a href="#" className="flex items-center">
-              Blocks
-            </a>
+            <Link to="/shop" className="flex items-center">
+              Shop
+            </Link>
           </Typography>
           <Typography
             as="li"
@@ -65,9 +65,9 @@ const Nav = () => {
             color="blue-gray"
             className="p-1 font-normal"
           >
-            <a href="#" className="flex items-center">
-              Docs
-            </a>
+            <Link to="/contact" className="flex items-center">
+              Contact
+            </Link>
           </Typography>
         </ul>
       );
@@ -77,15 +77,15 @@ const Nav = () => {
       <div className="container mx-auto flex items-center justify-between text-blue-gray-900">
         <Typography
           as="a"
-          href="#"
+          to="/"
           variant="small"
           className="mr-4 cursor-pointer py-1.5 font-normal"
         >
-          <span>Material Tailwind</span>
+          <span>Copped</span>
         </Typography>
         <div className="hidden lg:block">{navList}</div>
         <Button variant="gradient" size="sm" className="hidden lg:inline-block">
-          <span>Buy Now</span>
+          <span>Login</span>
         </Button>
         <IconButton
           variant="text"
@@ -128,7 +128,7 @@ const Nav = () => {
       <MobileNav open={openNav}>
         {navList}
         <Button variant="gradient" size="sm" fullWidth className="mb-2">
-          <span>Buy Now</span>
+          <span>Login</span>
         </Button>
       </MobileNav>
     </Navbar>
