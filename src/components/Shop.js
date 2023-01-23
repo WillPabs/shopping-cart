@@ -1,3 +1,4 @@
+import { Typography } from "@material-tailwind/react";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Card from "./Card";
@@ -35,7 +36,9 @@ const Shop = () => {
 		<div>
 			<Header />
 			<Cart />
-			<h2>Browse {productType ? productType : "All"} Products</h2>
+			<Typography variant="h3">
+				Browse {productType ? productType : "All"} Products
+			</Typography>
 			<ul id="product-list">{productCards}</ul>
 		</div>
 	);
