@@ -1,7 +1,7 @@
 import { Typography } from "@material-tailwind/react";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import Card from "./Card";
+import ProductCard from "./ProductCard";
 import Cart from "./Cart";
 import Categories from "./Categories";
 import Header from "./Nav";
@@ -19,7 +19,7 @@ const Shop = () => {
 							products.map((product) => {
 								return (
 									<li key={product.id}>
-										<Card product={product} />
+										<ProductCard product={product} />
 									</li>
 								);
 							})
