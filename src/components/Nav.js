@@ -70,7 +70,7 @@ const Nav = () => {
 				<Typography
 					as="a"
 					href="/"
-					variant="small"
+					variant="h5"
 					className="mr-4 cursor-pointer py-1.5 font-normal"
 				>
 					<span>Copped</span>
