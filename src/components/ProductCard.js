@@ -6,6 +6,7 @@ import {
 	CardFooter,
 	Typography,
 	Tooltip,
+	Button,
 } from "@material-tailwind/react";
 
 const ProductCard = ({ product }) => {
@@ -116,16 +117,7 @@ const ProductCard = ({ product }) => {
 						</Typography>
 					</Tooltip>
 					<Tooltip content="Add">
-						<Typography
-							as="button"
-							onClick={addToCart}
-							variant="lead"
-							color="green"
-							textGradient
-							className="bg-sky-500"
-						>
-							Cop to Cart
-						</Typography>
+						<Button onClick={addToCart}>Cop to Cart</Button>
 					</Tooltip>
 				</CardFooter>
 			</Card>
