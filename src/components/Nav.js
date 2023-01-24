@@ -76,6 +76,7 @@ const Nav = () => {
 					<span>Copped</span>
 				</Typography>
 				<div className="hidden lg:block">{navList}</div>
+
 				<Button
 					variant="gradient"
 					size="sm"
@@ -83,43 +84,56 @@ const Nav = () => {
 				>
 					<span>Login</span>
 				</Button>
-				<IconButton
-					variant="text"
-					className="ml-auto h-6 w-6 text-inherit hover:bg-transparent focus:bg-transparent active:bg-transparent lg:hidden"
-					ripple={false}
-					onClick={() => setOpenNav(!openNav)}
-				>
-					{openNav ? (
+				<div>
+					<IconButton variant="text" size="sm" className="ml-auto">
 						<svg
 							xmlns="http://www.w3.org/2000/svg"
-							fill="none"
-							className="h-6 w-6"
-							viewBox="0 0 24 24"
-							stroke="currentColor"
-							strokeWidth={2}
+							fill="black"
+							className="h-6 w-6 bi bi-cart"
+							viewBox="0 0 16 16"
 						>
-							<path
-								strokeLinecap="round"
-								strokeLinejoin="round"
-								d="M6 18L18 6M6 6l12 12"
-							/>
+							{" "}
+							<path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />{" "}
 						</svg>
-					) : (
-						<svg
-							xmlns="http://www.w3.org/2000/svg"
-							className="h-6 w-6"
-							fill="none"
-							stroke="currentColor"
-							strokeWidth={2}
-						>
-							<path
-								strokeLinecap="round"
-								strokeLinejoin="round"
-								d="M4 6h16M4 12h16M4 18h16"
-							/>
-						</svg>
-					)}
-				</IconButton>
+					</IconButton>
+					<IconButton
+						variant="text"
+						className="ml-auto h-6 w-6 text-inherit hover:bg-transparent focus:bg-transparent active:bg-transparent lg:hidden"
+						ripple={false}
+						onClick={() => setOpenNav(!openNav)}
+					>
+						{openNav ? (
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								fill="none"
+								className="h-6 w-6"
+								viewBox="0 0 24 24"
+								stroke="currentColor"
+								strokeWidth={2}
+							>
+								<path
+									strokeLinecap="round"
+									strokeLinejoin="round"
+									d="M6 18L18 6M6 6l12 12"
+								/>
+							</svg>
+						) : (
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								className="h-6 w-6"
+								fill="none"
+								stroke="currentColor"
+								strokeWidth={2}
+							>
+								<path
+									strokeLinecap="round"
+									strokeLinejoin="round"
+									d="M4 6h16M4 12h16M4 18h16"
+								/>
+							</svg>
+						)}
+					</IconButton>
+				</div>
 			</div>
 			<MobileNav open={openNav}>
 				{navList}
