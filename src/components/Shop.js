@@ -35,7 +35,6 @@ const Shop = () => {
 	return (
 		<div className="mx-auto max-w-screen-xl py-2 px-4 lg:px-8 lg:py-4">
 			<Header />
-			<Cart />
 			<div id="shop-content" className="text-center">
 				<Typography variant="h3">
 					Browse {productType ? productType : "All"} Products
