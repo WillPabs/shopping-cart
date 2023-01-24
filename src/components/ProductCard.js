@@ -20,13 +20,18 @@ const ProductCard = ({ product }) => {
 		onClick,
 	} = product;
 
-	const handleChange = (e) => {
-		setQuantity(e.target.value);
+	const changeQuantity = (e) => {
+		e.preventDefault();
+		const action = e.target.id;
+
+		if (action === "decrease") setQuantity(quantity - 1);
+		else if (action === "increase") setQuantity(quantity + 1);
 	};
 
 	const addToCart = async (e) => {
 		e.preventDefault();
 		console.log(quantity);
+		if (quantity === 0) return;
 
 		const data = await fetch("http://localhost:3001/cart", {
 			method: "POST",
@@ -68,6 +73,7 @@ const ProductCard = ({ product }) => {
 					</Typography>
 					<Typography
 						color="blue"
+						variant="lead"
 						className="font-medium"
 						textGradient
 					>
@@ -75,58 +81,54 @@ const ProductCard = ({ product }) => {
 					</Typography>
 				</CardBody>
 				<CardFooter className="flex justify-center gap-7 pt-2">
-					<Tooltip content="Like">
+					<Tooltip content="Remove">
 						<Typography
-							as="a"
-							href="#facebook"
+							as="button"
+							id="decrease"
+							onClick={changeQuantity}
 							variant="lead"
 							color="blue"
 							textGradient
 						>
-							<i className="fab fa-facebook" />
+							-
 						</Typography>
 					</Tooltip>
-					<Tooltip content="Follow">
+					<Tooltip content="Quantity">
 						<Typography
-							as="a"
-							href="#twitter"
+							as="span"
 							variant="lead"
-							color="light-blue"
+							color="blue"
 							textGradient
 						>
-							<i className="fab fa-twitter" />
+							{quantity}
 						</Typography>
 					</Tooltip>
-					<Tooltip content="Follow">
+					<Tooltip content="Add">
 						<Typography
-							as="a"
-							href="#instagram"
+							as="button"
+							id="increase"
+							onClick={changeQuantity}
 							variant="lead"
-							color="purple"
+							color="blue"
 							textGradient
 						>
-							<i className="fab fa-instagram" />
+							+
+						</Typography>
+					</Tooltip>
+					<Tooltip content="Add">
+						<Typography
+							as="button"
+							onClick={addToCart}
+							variant="lead"
+							color="green"
+							textGradient
+							className="bg-sky-500"
+						>
+							Cop to Cart
 						</Typography>
 					</Tooltip>
 				</CardFooter>
 			</Card>
-			{/* <div>
-                <figure onClick={onClick}>
-                    <img style={{width:120}} src={image} alt="productImage" />
-                    <figcaption>
-                        <h4>{title}</h4>
-                        <h4>${price}</h4>
-                    </figcaption>
-                    <input
-                        type="number"
-                        id="quantity"
-                        name="quantity"
-                        value={quantity}
-                        onChange={handleChange}
-                    />
-                    <button type="submit" onClick={addToCart}>Add To Cart</button>
-                </figure>
-            </div> */}
 		</form>
 	);
 };
