@@ -36,12 +36,14 @@ const Shop = () => {
 		<div className="mx-auto max-w-screen-xl py-2 px-4 lg:px-8 lg:py-4">
 			<Header />
 			<Cart />
-			<Typography variant="h3">
-				Browse {productType ? productType : "All"} Products
-			</Typography>
-			<ul id="product-list" className="flex flex-wrap">
-				{productCards}
-			</ul>
+			<div id="shop-content" className="text-center">
+				<Typography variant="h3">
+					Browse {productType ? productType : "All"} Products
+				</Typography>
+				<ul id="product-list" className="flex flex-wrap justify-center">
+					{productCards}
+				</ul>
+			</div>
 		</div>
 	);
 };
