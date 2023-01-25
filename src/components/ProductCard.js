@@ -12,6 +12,7 @@ import {
 const ProductCard = ({ product }) => {
 	const [quantity, setQuantity] = useState(0);
 	const {
+		id,
 		image,
 		title,
 		price,
@@ -41,6 +42,7 @@ const ProductCard = ({ product }) => {
 				"Content-Type": "application/json",
 			},
 			body: JSON.stringify({
+				productId: id,
 				title: title,
 				category: category,
 				description: description,

@@ -4,13 +4,12 @@ const Cart = () => {
 	const [products, setProducts] = useState([]);
 	const [totalPrice, setTotalPrice] = useState(0);
 
-	// get cart from api and set to products
 	const getCart = async () => {
 		const data = await fetch("http://localhost:3001/cart");
 		const cart = await data.json();
 		let price = 0;
 		await cart.forEach((p) => {
-			price += Number(p.price);
+			price += Number(p.price) * Number(p.requestedQuantity);
 		});
 		setTotalPrice(price);
 		setProducts(cart);
@@ -21,7 +20,7 @@ const Cart = () => {
 	}, []);
 
 	return (
-		<div>
+		<div id="user-cart">
 			<table>
 				<thead>
 					<tr>
@@ -35,7 +34,6 @@ const Cart = () => {
 				</thead>
 				<tbody>
 					{products.map((p) => {
-						console.log(p);
 						return (
 							<tr key={p._id}>
 								<td>
@@ -63,17 +61,6 @@ const Cart = () => {
 				</tfoot>
 			</table>
 		</div>
-		// <div id='user-cart'>
-		//     <h3>Your Cart</h3>
-		//     <ul id='cart-list'>
-		//         {products.map((p) => {
-		//             return (
-		//                 <CartItem key={p._id} product={p}/>
-		//             )
-		//         })}
-		//         {'Total: $'+totalPrice}
-		//     </ul>
-		// </div>
 	);
 };
 
