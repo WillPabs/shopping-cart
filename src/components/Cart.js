@@ -1,4 +1,4 @@
-import { Typography } from "@material-tailwind/react";
+import { Button, Typography } from "@material-tailwind/react";
 import { useEffect, useState } from "react";
 
 const Cart = () => {
@@ -67,6 +67,11 @@ const Cart = () => {
 							Total
 						</td>
 						<td>${totalPrice}</td>
+					</tr>
+					<tr>
+						<td align="right" colSpan={5}>
+							<Button>Cop</Button>
+						</td>
 					</tr>
 				</tfoot>
 			</table>
