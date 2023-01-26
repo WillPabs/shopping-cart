@@ -80,14 +80,14 @@ const Nav = () => {
 					</Typography>
 					<div className="hidden lg:block">{navList}</div>
 
-					<Button
-						variant="gradient"
-						size="sm"
-						className="hidden lg:inline-block"
-					>
-						<span>Login</span>
-					</Button>
-					<div>
+					<div className="flex items-center gap-4">
+						<Button
+							variant="gradient"
+							size="sm"
+							className="hidden lg:inline-block"
+						>
+							<span>Login</span>
+						</Button>
 						<IconButton
 							variant="text"
 							size="sm"
