@@ -1,16 +1,21 @@
+import { Typography } from "@material-tailwind/react";
 import { useEffect, useState } from "react";
 
 const Cart = () => {
 	const [products, setProducts] = useState([]);
 	const [totalPrice, setTotalPrice] = useState(0);
+	const [productCount, setProductCount] = useState(0);
 
 	const getCart = async () => {
 		const data = await fetch("http://localhost:3001/cart");
 		const cart = await data.json();
 		let price = 0;
+		let count = 0;
 		await cart.forEach((p) => {
 			price += Number(p.price) * Number(p.requestedQuantity);
+			count += p.requestedQuantity;
 		});
+		setProductCount(count);
 		setTotalPrice(price);
 		setProducts(cart);
 	};
@@ -20,10 +25,13 @@ const Cart = () => {
 	}, []);
 
 	return (
-		<div id="user-cart">
-			<table>
+		<div id="user-cart" className="flex flex-col justify-center">
+			<Typography variant="h4" className="text-center">
+				Your Cart ({productCount} Items)
+			</Typography>
+			<table className="table-auto">
 				<thead>
-					<tr>
+					<tr className="border-b">
 						<th align="left" colSpan={2}>
 							Item
 						</th>
@@ -35,7 +43,7 @@ const Cart = () => {
 				<tbody>
 					{products.map((p) => {
 						return (
-							<tr key={p._id}>
+							<tr key={p._id} className="border-y text-center">
 								<td>
 									<img
 										className="h-12 w-12"
@@ -52,7 +60,7 @@ const Cart = () => {
 					})}
 				</tbody>
 				<tfoot>
-					<tr>
+					<tr className="border-t">
 						<td align="right" colSpan={4}>
 							Total
 						</td>
