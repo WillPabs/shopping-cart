@@ -26,10 +26,12 @@ const Cart = () => {
 
 	return (
 		<div id="user-cart" className="flex flex-col justify-center">
-			<Typography variant="h4" className="text-center">
-				Your Cart ({productCount} Items)
-			</Typography>
 			<table className="table-auto">
+				<caption>
+					<Typography variant="h4">
+						Your Cart ({productCount} Items)
+					</Typography>
+				</caption>
 				<thead>
 					<tr className="border-b">
 						<th align="left" colSpan={2}>
