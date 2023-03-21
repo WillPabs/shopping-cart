@@ -2,6 +2,7 @@ import { Typography } from "@material-tailwind/react";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import ProductCard from "./ProductCard";
+import Footer from "./Footer";
 import Cart from "./Cart";
 import Categories from "./Categories";
 import Header from "./Nav";
@@ -43,6 +44,7 @@ const Shop = () => {
 					{productCards}
 				</ul>
 			</div>
+			<Footer />
 		</div>
 	);
 };

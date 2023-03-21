@@ -1,5 +1,6 @@
 import Nav from "./Nav";
 import Categories from "./Categories";
+import Footer from "./Footer";
 import { Typography } from "@material-tailwind/react";
 
 const Homepage = () => {
@@ -17,6 +18,7 @@ const Homepage = () => {
 			<Nav />
 			{banner}
 			<Categories />
+			<Footer />
 		</div>
 	);
 };

@@ -2,13 +2,13 @@ import { Typography } from "@material-tailwind/react";
 
 const Footer = () => {
 	return (
-		<div id="footer">
-			<div>Home</div>
-			<div>Shop</div>
-			<div>About</div>
-			<div>Contact</div>
-			<div>Account</div>
-		</div>
+		<footer className="flex flex-col text-center bg-blue-gray-100 mt-auto">
+			<Typography>Home</Typography>
+			<Typography>Shop</Typography>
+			<Typography>About</Typography>
+			<Typography>Contact</Typography>
+			<Typography>Account</Typography>
+		</footer>
 	);
 };
 
