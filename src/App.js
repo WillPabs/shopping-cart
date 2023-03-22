@@ -3,7 +3,7 @@ import Homepage from "./components/Homepage";
 
 const App = () => {
 	return (
-		<div className="App flex flex-col min-h-screen">
+		<div className="App">
 			<Homepage />
 		</div>
 	);

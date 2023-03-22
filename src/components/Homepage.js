@@ -14,7 +14,7 @@ const Homepage = () => {
 	);
 
 	return (
-		<div id="homepage">
+		<div id="homepage" className="flex flex-col min-h-screen">
 			<Nav />
 			{banner}
 			<Categories />
