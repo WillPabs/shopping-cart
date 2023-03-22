@@ -23,9 +23,11 @@ const Categories = () => {
 				else if (product === "men's clothing") link = tshirt;
 				else if (product === "women's clothing") link = dress;
 				else if (product === "jewelery") link = jewelry;
-
 				return (
-					<li key={product}>
+					<li
+						key={product}
+						className="flex text-center justify-center"
+					>
 						<Link to={`/shop/${product}`} style={{ width: 80 }}>
 							<img
 								style={{ width: 80 }}
