@@ -37,7 +37,7 @@ const Shop = () => {
 		<div className="mx-auto max-w-screen-xl py-2 px-4 lg:px-8 lg:py-4">
 			<Header />
 			<div id="shop-content" className="text-center">
-				<Typography variant="h3">
+				<Typography variant="h3" className="py-10">
 					Browse {productType ? productType : "All"} Products
 				</Typography>
 				<ul id="product-list" className="flex flex-wrap justify-center">

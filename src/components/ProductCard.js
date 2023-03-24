@@ -57,6 +57,15 @@ const ProductCard = ({ product }) => {
 		console.log(product);
 	};
 
+	// cut string and '...' if char over limit
+	const limitStringLength = (string) => {
+		if (string.length > 60) {
+			string = string.substr(0, 60);
+			string = string + "...";
+		}
+		return string;
+	};
+
 	return (
 		<form>
 			<Card className="w-96">
@@ -71,8 +80,12 @@ const ProductCard = ({ product }) => {
 					/>
 				</CardHeader>
 				<CardBody className="text-center">
-					<Typography variant="h4" color="blue-gray" className="mb-2">
-						{title}
+					<Typography
+						variant="h4"
+						color="blue-gray"
+						className="flex h-32 items-center"
+					>
+						{limitStringLength(title)}
 					</Typography>
 					<Typography
 						color="blue"
