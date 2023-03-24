@@ -66,7 +66,7 @@ const Cart = () => {
 						<td align="right" colSpan={4}>
 							Total
 						</td>
-						<td>${totalPrice}</td>
+						<td>${totalPrice.toFixed(2)}</td>
 					</tr>
 					<tr>
 						<td align="right" colSpan={5}>
