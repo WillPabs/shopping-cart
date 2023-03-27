@@ -28,12 +28,8 @@ const Categories = () => {
 						key={product}
 						className="flex text-center justify-center"
 					>
-						<Link to={`/shop/${product}`} style={{ width: 80 }}>
-							<img
-								style={{ width: 80 }}
-								src={link}
-								alt={product}
-							/>
+						<Link to={`/shop/${product}`}>
+							<img className="" src={link} alt={product} />
 							<h3>{product}</h3>
 						</Link>
 					</li>

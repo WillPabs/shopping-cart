@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import ProductCard from "./ProductCard";
 import Footer from "./Footer";
-import Cart from "./Cart";
 import Categories from "./Categories";
 import Header from "./Nav";
 
@@ -34,7 +33,7 @@ const Shop = () => {
 	}, [productType]);
 
 	return (
-		<div className="mx-auto max-w-screen-xl py-2 px-4 lg:px-8 lg:py-4">
+		<div className="flex flex-col min-h-screen mx-auto max-w-screen-xl py-2 px-4 lg:px-8 lg:py-4">
 			<Header />
 			<div id="shop-content" className="text-center">
 				<Typography variant="h3" className="py-10">
