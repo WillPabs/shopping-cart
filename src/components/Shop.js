@@ -33,9 +33,12 @@ const Shop = () => {
 	}, [productType]);
 
 	return (
-		<div className="flex flex-col min-h-screen mx-auto max-w-screen-xl py-2 px-4 lg:px-8 lg:py-4">
+		<div className="flex flex-col min-h-screen">
 			<Header />
-			<div id="shop-content" className="text-center">
+			<div
+				id="shop-content"
+				className="text-center mx-auto max-w-screen-xl py-2 px-4 lg:px-8 lg:py-4"
+			>
 				<Typography variant="h3" className="py-10">
 					Browse {productType ? productType : "All"} Products
 				</Typography>

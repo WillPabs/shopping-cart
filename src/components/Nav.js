@@ -157,44 +157,6 @@ const Nav = () => {
 			</Navbar>
 			{openCart && <Cart />}
 		</div>
-
-		// <nav className="relative
-		// w-full
-		// flex flex-wrap
-		// items-center
-		// justify-between
-		// py-4
-		// bg-gray-100
-		// text-gray-500
-		// hover:text-gray-700
-		// focus:text-gray-700
-		// shadow-lg
-		// navbar navbar-expand-lg navbar-light">
-		//     <div id="logo-container" className="flex flex-row space-x-4 justify-center">
-		//         <img src={logo} alt="logoImage" />
-		//         <h3>{companyName}</h3>
-		//     </div>
-		//     <ul id="links-container" className="flex flex-row space-x-4 justify-center">
-		//         <li className="nav-link">
-		//             <Link to='/'>Home</Link>
-		//         </li>
-		//         <li className="nav-link">
-		//             <Link to='/shop'>Shop</Link>
-		//         </li>
-		//         <li className="nav-link">
-		//             <Link to='/about'>About</Link>
-		//         </li>
-		//         <li className="nav-link">
-		//             <Link to='/contact'>Contact</Link>
-		//         </li>
-		//         <li className="nav-link">
-		//             {cartButton}
-		//         </li>
-		//         <li className="nav-link">
-		//             {loginButton}
-		//         </li>
-		//     </ul>
-		// </nav>
 	);
 };
 
