@@ -57,7 +57,7 @@ const ProductCard = ({ product }) => {
 		console.log(product);
 	};
 
-	// cut string and '...' if char over limit
+	// cut string and add '...' to end if char over limit
 	const limitStringLength = (string) => {
 		if (string.length > 60) {
 			string = string.substr(0, 60);

@@ -1,5 +1,6 @@
 import { Button, Typography } from "@material-tailwind/react";
 import { useEffect, useState } from "react";
+import CartItem from "./CartItem";
 
 const Cart = () => {
 	const [products, setProducts] = useState([]);
@@ -44,21 +45,7 @@ const Cart = () => {
 				</thead>
 				<tbody>
 					{products.map((p) => {
-						return (
-							<tr key={p._id} className="border-y text-center">
-								<td>
-									<img
-										className="h-12 w-12"
-										src={p.imageUrl}
-										alt={p.title}
-									/>
-								</td>
-								<td>{p.title}</td>
-								<td>${p.price}</td>
-								<td>{p.requestedQuantity}</td>
-								<td>${p.price * p.requestedQuantity}</td>
-							</tr>
-						);
+						return <CartItem key={p._id} product={p} />;
 					})}
 				</tbody>
 				<tfoot>
